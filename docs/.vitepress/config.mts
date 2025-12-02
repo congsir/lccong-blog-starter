@@ -12,7 +12,7 @@ export default defineConfig({
   },
   themeConfig: {
     footer: {
-      message: 'VitePress Blog Starter',
+      message: 'lccong个人博客',
       copyright: 'Copyright © 2023 SFXCode',
     },
     search: {
@@ -21,22 +21,24 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/sfxcode/vitepress-blog-starter' },
     ],
-    editLink: {
-      pattern: 'https://github.com/sfxcode/vitepress-blog-starter/edit/main/docs/:path',
-      text: 'Edit this page on GitHub',
-    },
     nav: nav(),
-    sidebar: {
-      '/guide/': sidebarGuide(),
-      '/config/': sidebarConfig(),
-    },
-    blog: {
-      title: 'My Blog',
-      description: 'Some articles for sample Blog',
-    },
-
+    sidebar: [
+      {
+        text: '开始',   // 分组标题
+        items: [
+          // text: 菜单显示的文字, link: 对应的文件路径(不用写.md)
+          { text: '简介', link: '/guide/intro' }
+        ]
+      },
+      {
+        text: '项目',   // 第二个分组
+        items: [
+          { text: '大屏项目', link: '/program/bigScreen' }
+        ]
+      }
+    ]
   },
-  title: 'VitePress Blog Starter',
+  title: 'lccong个人博客',
   vite: {
     plugins: [
       Unocss({
